@@ -29,7 +29,7 @@ const handleCopybutton = ()=>{
         onClick={handleProfileClick}>
         
         <Image 
-        src={post.creator.image}
+        src={post.creator?.image}
         alt="User Image"
         width={40}
         height={40}
@@ -37,10 +37,10 @@ const handleCopybutton = ()=>{
         />
           <div className="flex flex-col">
             <h3 className='font-satoshi font-semibold text-gray-900'>
-              {post.creator.username}
+              {post.creator?.username}
             </h3>
             <p className="font-inter text-sm text-gray-500">
-              {post.creator.email}
+              {post.creator?.email}
             </p>
           </div>
           </div>
@@ -58,7 +58,7 @@ onClick={()=>handleTagclick && handleTagclick(post.tag)}
 >
   {post.tag}
 </p>
-{session?.user.id === post.creator._id && pathname ==='/profile' &&
+{session?.user.id === post.creator?._id && pathname ==='/profile' &&
 (
   <div className='mt-5 flex-center gap-4 border-t border-gray-100 pt-3'>
     <p className='font-inter text-sm green_gradient cursor-pointer' onClick={handleEdit}>
